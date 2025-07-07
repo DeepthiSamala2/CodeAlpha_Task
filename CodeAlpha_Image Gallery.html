@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="lightbox.css">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Poppins', sans-serif;
+           
+        }
+        body{
+            background: azure;
+        }
+        .container {
+          width: 80%;
+          margin:100px auto 50px;
+            display:grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-gap:30px;      
+         }
+         .container img{
+            width:100%;
+            cursor: pointer;
+         }
+         .container img:hover{
+            transform: scale(0.8) rotate(-15deg);
+            border-radius: 20px;
+            box-shadow: 0 32px 75px rgba(68,77,136,0.2);
+         }
+        .full-img{
+            width: 100%;
+            height:100vh;
+            background:rgba(0,0,0,0.9);
+            position:fixed;
+            top:0;
+            left:0;
+            display:none;
+            align-items:center;
+            justify-content: center;
+            z-index:100px;
+        }
+        .full-img img{
+            width: 100%;
+            max-width: 400px;
+        }
+        .full-img span{
+            position: absolute;
+            top:5%;
+            right:5%;
+            font-size:30px;
+            color:blue;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="full-img" id="fullImgBox">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg" id="fullImg">
+<span onclick="closeFullImg()">X</span>
+
+    </div>
+    <div class="container">
+      <a href="https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg"data-lightbox="models"data-title="Caption1">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/036/324/708/small/ai-generated-picture-of-a-tiger-walking-in-the-forest-photo.jpg" onclick="openFullImg(this.src)">
+
+      </a>
+      <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s"data-lightbox="models"data-title="Caption2">
+            
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPIfiGgUML8G3ZqsNLHfaCnZK3I5g4tJabQ&s" style="height:35vh">
+      </a>
+      <a href="https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg"data-lightbox="models"data-title="Caption3">
+                <img src="https://cdn.pixabay.com/photo/2024/05/26/10/15/bird-8788491_1280.jpg">
+      </a>
+      <a href="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740"data-lightbox="models"data-title="Caption4">
+               <img src="https://img.freepik.com/free-photo/closeup-scarlet-macaw-from-side-view-scarlet-macaw-closeup-head_488145-3540.jpg?semt=ais_hybrid&w=740 "style="height:35vh">
+        </a>
+        <a href="https://imgv3.fotor.com/images/slider-image/A-clear-close-up-photo-of-a-woman.jpg"data-lightbox="models"data-title="Caption5">
+                <img src="https://imgv3.fotor.com/images/slider-image/A-clear-close-up-photo-of-a-woman.jpg"style="height:35vh">
+      </a>
+      <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ1ipeQbFseUM_GzxwMoQj45w9HtAnu4eu5w&s"data-lightbox="models"data-title="Caption6">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ1ipeQbFseUM_GzxwMoQj45w9HtAnu4eu5w&s">
+
+      </a>
+      <a href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmwla6vUQK67X5KHksARyVrL4Evo509hBcCA&s"data-lightbox="models"data-title="Caption7">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmwla6vUQK67X5KHksARyVrL4Evo509hBcCA&s">
+      </a>
+       
+       <a href="https://www.befunky.com/images/prismic/0d88c466-8c06-4ddc-8534-1047b109136d_features-background-remover4.png?auto=avif,webp&format=jpg&width=581"data-lightbox="models"data-title="Caption8">
+            <img src="https://www.befunky.com/images/prismic/0d88c466-8c06-4ddc-8534-1047b109136d_features-background-remover4.png?auto=avif,webp&format=jpg&width=581" style="height:35vh">
+       </a>
+    
+</div>
+<script>
+    var fullImgBox=document.getElementById("fullImgBox");
+    var fullImg=document.getElementById("fullImg");
+
+    function openFullImg(pic){
+        fullImgBox.style.display="flex";
+        fullImg.src=pic;
+    }
+    function closeFullImg(){
+        fullImgBox.style.display="none";
+    }
+</script>
+<script src="lightbox-plus-jquery.js">  </script>
+</body>
+</html>
